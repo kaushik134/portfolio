@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/json-ld";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
@@ -80,6 +81,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

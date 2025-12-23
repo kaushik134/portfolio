@@ -79,14 +79,14 @@ export function HeroContent() {
                     <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
 
-                <Link
+                <a
                     href="/resume.pdf"
-                    target="_blank"
+                    download="Kaushik_Vaghasiya_Resume.pdf"
                     className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-foreground transition-all duration-200 bg-secondary/50 border border-border rounded-lg hover:bg-secondary hover:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-border focus:ring-offset-background w-full sm:w-auto"
                 >
                     Download Resume
                     <Download className="w-5 h-5 ml-2" />
-                </Link>
+                </a>
             </motion.div>
 
             {/* Stats */}
