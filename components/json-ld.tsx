@@ -5,9 +5,9 @@ export function JsonLd() {
         "@context": "https://schema.org",
         "@type": "Person",
         name: resumeData.hero.name,
-        url: "https://kaushik.dev",
+        url: "https://kaushik-vaghasiya.vercel.app",
         jobTitle: resumeData.hero.role,
-        image: "https://kaushik.dev/profile.jpg",
+        image: "https://kaushik-vaghasiya.vercel.app/profile.jpg",
         sameAs: [
             "https://github.com/kaushik134",
             "https://www.linkedin.com/in/kaushik-vaghasiya-6b0788215",

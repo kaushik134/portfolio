@@ -12,19 +12,19 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kaushik.dev"),
+  metadataBase: new URL("https://kaushik-vaghasiya.vercel.app"),
   title: {
     default: "Kaushik Vaghasiya | Senior Backend Developer",
     template: "%s | Kaushik Vaghasiya",
   },
   description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture. 4+ years of experience.",
   keywords: ["Kaushik Vaghasiya", "Backend Developer", "Node.js", "Express.js", "Microservices", "System Architecture", "Web Developer", "Software Engineer"],
-  authors: [{ name: "Kaushik Vaghasiya", url: "https://kaushik.dev" }],
+  authors: [{ name: "Kaushik Vaghasiya", url: "https://kaushik-vaghasiya.vercel.app" }],
   creator: "Kaushik Vaghasiya",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kaushik.dev",
+    url: "https://kaushik-vaghasiya.vercel.app",
     title: "Kaushik Vaghasiya | Senior Backend Developer",
     description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture.",
     siteName: "Kaushik Vaghasiya Portfolio",

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
 
-const baseUrl = "https://kaushik.dev"; // Placeholder domain
+const baseUrl = "https://kaushik-vaghasiya.vercel.app"; // Placeholder domain
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const projectUrls = projects.map((project) => ({

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: `${project.title} | Kaushik Vaghasiya`,
             description: project.fullDescription,
             type: "article",
-            url: `https://kaushik.dev/projects/${project.slug}`,
+            url: `https://kaushik-vaghasiya.vercel.app/projects/${project.slug}`,
             section: "Portfolio",
             tags: project.categories,
         },
