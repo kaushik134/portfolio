@@ -51,13 +51,13 @@ export function ExperienceTimeline() {
                                         {job.company}
                                     </div>
                                 </div>
-                                <div className="flex flex-col sm:items-end gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                                    <div className="flex items-center bg-secondary/50 px-3 py-1 rounded-full group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                                        <Calendar className="w-3 h-3 mr-2" />
+                                <div className="flex flex-col sm:items-end gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors mt-2 sm:mt-0">
+                                    <div className="inline-flex items-center bg-secondary/50 px-3 py-1 rounded-full group-hover:bg-primary/10 group-hover:text-primary transition-colors text-xs sm:text-sm w-fit whitespace-nowrap">
+                                        <Calendar className="w-3.5 h-3.5 mr-2 shrink-0" />
                                         {job.period}
                                     </div>
-                                    <div className="flex items-center">
-                                        <MapPin className="w-3 h-3 mr-2" />
+                                    <div className="flex items-center text-xs sm:text-sm">
+                                        <MapPin className="w-3.5 h-3.5 mr-2 shrink-0" />
                                         {job.location}
                                     </div>
                                 </div>

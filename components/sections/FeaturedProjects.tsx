@@ -14,9 +14,11 @@ export function FeaturedProjects() {
 
     return (
         // <section id="projects" className="py-16 bg-background">
-            // <div className="container mx-auto px-4 md:px-6">
+        // <div className="container mx-auto px-4 md:px-6">
         <section id="projects" className="py-16 bg-background relative overflow-hidden">
-            <ChecksGrid variant="fade-out" opacity="opacity-50" />
+            {/* <ChecksGrid variant="fade-out" opacity="opacity-50" /> */}
+            <ChecksGrid variant="dense" opacity="opacity-20" />
+
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-6">
                     <div className="space-y-2">
