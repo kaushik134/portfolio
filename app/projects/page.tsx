@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     const [isSortOpen, setIsSortOpen] = useState(false);
 
     // Define specific categories in order
-    const categories = ["All", "Full-Stack", "E-commerce", "Portal", "Healthcare", "Civic Tech"];
+    const categories = ["All", "Full-Stack", "E-commerce", "Job Portal", "Healthcare", "Civic Tech"];
 
     const filteredAndSortedProjects = useMemo(() => {
         let result = [...projects];
@@ -25,13 +25,26 @@ export default function ProjectsPage() {
             );
         }
 
+        // result.sort((a, b) => {
+        //     if (sort === "impact") {
+        //         return b.impactScore - a.impactScore;
+        //     } else {
+        //         return new Date(b.date).getTime() - new Date(a.date).getTime();
+        //     }
+        // });
+
         result.sort((a, b) => {
+            if (a.featured && b.featured) {
+                return (a.featuredPriority ?? 999) - (b.featuredPriority ?? 999);
+            }
+
             if (sort === "impact") {
                 return b.impactScore - a.impactScore;
-            } else {
-                return new Date(b.date).getTime() - new Date(a.date).getTime();
             }
+
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
+
 
         return result;
     }, [filter, sort]);

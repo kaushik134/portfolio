@@ -19,9 +19,9 @@ export type Project = {
 
     paymentsAndPayouts?: {
         paymentGateways: string[];
-        payoutCycle: string;
-        supportedModes: string[];
-        reconciliation: string;
+        payoutCycle?: string;
+        supportedModes?: string[];
+        reconciliation?: string;
     };
 
     notifications?: string[];
@@ -47,6 +47,7 @@ export type Project = {
     githubUrl?: string;
     liveUrl?: string;
     featured: boolean;
+    featuredPriority: number;
 };
 
 export const projects: Project[] = resumeData.projects;

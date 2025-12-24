@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Calendar, CheckCircle2, Layers, Server, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { ProjectFeatures } from "@/components/project-features";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -155,22 +156,7 @@ export default async function ProjectPage({ params }: Props) {
                                     </div>
                                 </div>
                                 {project.coreFeatures && (
-                                    <div className="p-5 md:p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                                        <h3 className="text-lg font-semibold mb-3 text-primary">Core Features</h3>
-                                        <ul className="space-y-2">
-                                            {project.coreFeatures.slice(0, 4).map((feature, i) => (
-                                                <li key={i} className="flex items-start text-sm text-muted-foreground">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2 mt-1.5 shrink-0" />
-                                                    <span className="flex-1">{feature}</span>
-                                                </li>
-                                            ))}
-                                            {project.coreFeatures.length > 4 && (
-                                                <li className="text-xs text-muted-foreground italic pl-3.5">
-                                                    + {project.coreFeatures.length - 4} more features
-                                                </li>
-                                            )}
-                                        </ul>
-                                    </div>
+                                    <ProjectFeatures features={project.coreFeatures} />
                                 )}
                             </section>
                         )}

@@ -26,6 +26,23 @@ export function HeroContent() {
     return (
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8 max-w-2xl mx-auto md:mx-0">
             {/* Top Pill */}
+            {resumeData.hero.openToNetwork && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1 mb-2"
+                >
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span className="text-xs font-medium text-green-500 tracking-wide uppercase">
+                        Open to Network
+                    </span>
+                </motion.div>
+            )}
+
+            {/* Role Pill */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -81,7 +98,7 @@ export function HeroContent() {
 
                 <a
                     href="/resume.pdf"
-                    download="Kaushik_Vaghasiya_Resume.pdf"
+                    download="Kaushik_Vaghasiya_NodeJs.pdf"
                     className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-foreground transition-all duration-200 bg-secondary/50 border border-border rounded-lg hover:bg-secondary hover:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-border focus:ring-offset-background w-full sm:w-auto"
                 >
                     Download Resume

@@ -51,7 +51,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="font-semibold text-lg">Location</h3>
                                     <p className="text-muted-foreground">
-                                        Ahmedabad, Gujarat, India
+                                        Surat, Gujarat, India
                                     </p>
                                 </div>
                             </div>
