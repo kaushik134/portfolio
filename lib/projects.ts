@@ -6,8 +6,38 @@ export type Project = {
     slug: string;
     description: string;
     fullDescription: string;
-    challenges: string;
-    solutions: string;
+
+    // Extended details (optional for backward compatibility)
+    roles?: string[];
+    coreFeatures?: string[];
+    challenges: string[]; // Changed to array
+    solutions: string[]; // Changed to array
+
+    systemFlow?: {
+        [key: string]: string[] | undefined;
+    };
+
+    paymentsAndPayouts?: {
+        paymentGateways: string[];
+        payoutCycle: string;
+        supportedModes: string[];
+        reconciliation: string;
+    };
+
+    notifications?: string[];
+    adminCapabilities?: string[];
+
+    techStack?: {
+        backend?: string[];
+        frontend?: string[];
+        database?: string[];
+        payments?: string[];
+        notifications?: string[];
+        infrastructure?: string[];
+        versionControl?: string[];
+        [key: string]: string[] | undefined;
+    };
+
     impact: string[];
     stack: string[];
     categories: string[];

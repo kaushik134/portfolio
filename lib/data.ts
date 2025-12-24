@@ -72,48 +72,253 @@ export const resumeData = {
             id: "1",
             title: "Grabit",
             slug: "grabit-ecommerce",
-            description: "Multi-role e-commerce platform with automated payouts.",
-            fullDescription: "Developed and enhanced a multi-role platform (User, Business, Admin) with shop, order management, and automated payout modules.",
-            challenges: "Complex multi-role permission handling and automated payout scheduling.",
-            solutions: "Integrated Razorpay & Cashfree for payments and implemented Twilio-based notifications.",
-            impact: ["Boosted merchant adoption by 20%."],
-            stack: ["Node.js", "React.js", "MongoDB", "Razorpay", "Cashfree", "Twilio"],
-            categories: ["Full-Stack", "E-commerce", "Fintech"],
-            images: ["/projects/grabit-1.jpg"], // Placeholder
-            date: "2024-01-01", // Approx
+            description: "Location-based multi-role e-commerce & rewards platform with automated payouts and gamified coin system.",
+            fullDescription: `Grabit is a location-aware, multi-role commerce and rewards platform connecting nearby users and local businesses.
+The system supports User, Business, and Admin roles with OTP-based authentication, real-time location tracking,
+QR-based offer redemption, UPI payments, automated payouts, and a gamified coin mining engine.`,
+
+            roles: ["User", "Business", "Admin"],
+
+            coreFeatures: [
+                "OTP-based authentication (mobile & email)",
+                "Real-time location tracking (5 km radius)",
+                "Nearby business & offer discovery",
+                "QR-based offer redemption",
+                "UPI payments with automated payouts",
+                "Gamified coin mining system",
+                "Business subscriptions & promotions",
+                "Banner ads & push notifications"
+            ],
+
+            challenges: [
+                "Handling complex multi-role access control",
+                "Real-time geo-based filtering for nearby users and businesses",
+                "Secure QR code lifecycle management",
+                "Automated payout scheduling and reconciliation",
+                "Preventing coin misuse and fraud scenarios"
+            ],
+
+            solutions: [
+                "Implemented role-based access control (RBAC)",
+                "Used geo-indexing for fast 5 km radius queries",
+                "Designed secure QR validation and redemption flow",
+                "Integrated Razorpay & Cashfree for UPI payments and payouts",
+                "Maintained coin transaction logs for audit and fraud prevention"
+            ],
+
+            systemFlow: {
+                "Auth & Discovery": [
+                    "OTP-based authentication (mobile & email)",
+                    "User/Business location tracking every 5 mins",
+                    "Map-based discovery of nearby offers within 5km"
+                ],
+                "Transactions & Rewards": [
+                    "Coins earned via activity, bill upload, and daily usage",
+                    "Direct coin redemption on offers and purchases",
+                    "UPI payments and secure QR-based redemption"
+                ],
+                "Business & Monetization": [
+                    "GMB integration and manual business onboarding",
+                    "Subscription-based promotion & targeted notifications",
+                    "Automated 7-day payout cycles with reconciliation"
+                ]
+            },
+
+            paymentsAndPayouts: {
+                paymentGateways: ["Razorpay", "Cashfree"],
+                payoutCycle: "7 working days",
+                supportedModes: ["UPI"],
+                reconciliation: "Automated payout status tracking in business dashboard"
+            },
+
+            notifications: [
+                "Fast2SMS for OTP & transactional SMS",
+                "Twilio for communication services",
+                "Zoho Mail for email notifications"
+            ],
+
+            adminCapabilities: [
+                "User & business verification",
+                "Subscription & commission management",
+                "Payout monitoring",
+                "Platform analytics & reporting"
+            ],
+
+            techStack: {
+                backend: ["Node.js"],
+                frontend: ["React Native"],
+                database: ["MongoDB"],
+                payments: ["Razorpay", "Cashfree"],
+                notifications: ["Fast2SMS", "Twilio", "Zoho Mail"],
+                infrastructure: ["DigitalOcean"],
+                versionControl: ["GitHub"]
+            },
+
+            impact: [
+                "Increased merchant onboarding by 20%",
+                "Improved offline store footfall via location targeting",
+                "Higher user engagement through gamified rewards",
+                "Built trust with transparent automated payouts"
+            ],
+
+            // Consolidated stack for backward compatibility
+            stack: ["Node.js", "React.js", "MongoDB", "Razorpay", "Cashfree", "Twilio", "DigitalOcean"],
+            categories: ["Full-Stack", "E-commerce", "Fintech", "Location-Based"],
+            images: [
+                "/projects/grabit-4.png",
+                "/projects/grabit-5.png",
+                "/projects/grabit-1.png",
+                "/projects/grabit-2.png",
+                "/projects/grabit-3.png",
+            ],
+            date: "2024-01-01",
             impactScore: 92,
             featured: true
         },
         {
             id: "2",
-            title: "Skill Connect (Job Portal)",
-            slug: "skill-connect-job-portal",
-            description: "Secure dual-registration job placement portal.",
-            fullDescription: "Engineered a secure dual registration & authentication system for companies and job candidates, ensuring 100% data isolation & compliance.",
-            challenges: "Ensuring 100% data isolation between candidates and companies.",
-            solutions: "Automated job posting renewals and interview scheduling.",
-            impact: ["Reduced manual workload by 50%."],
-            stack: ["Node.js", "React.js", "AngularJS", "MongoDB", "PayPal"],
-            categories: ["Full-Stack", "Portal", "Automation"],
-            images: ["/projects/job-portal-1.jpg"],
-            date: "2023-06-01", // Approx
-            impactScore: 88,
+            title: "Clutchly AI",
+            slug: "clutchly-ai",
+
+            description:
+                "AI-powered fantasy cricket decision-support platform with real-time scoring, win prediction, and multi-platform optimization.",
+
+            fullDescription: `
+Clutchly AI is a cross-platform fantasy cricket assistant designed to help users improve
+their winning probability using advanced data pipelines and machine learning models.
+The platform supports multi-platform fantasy scoring (Dream11, MPL), real-time match data ingestion,
+AI-driven win prediction, squad optimization, and explainable insights.
+`,
+
+            roles: ["User", "Admin"],
+
+            coreFeatures: [
+                "Multi-login authentication (Email, Google, Facebook)",
+                "Live & upcoming match discovery",
+                "Drag-and-drop squad builder",
+                "Platform-specific scoring engine (Dream11, MPL)",
+                "AI-based win probability prediction",
+                "Explainable AI (player contribution analysis)",
+                "Squad optimization using constraints",
+                "What-if team simulation",
+                "Push notifications for toss & injuries",
+                "Subscription-based premium access"
+            ],
+
+            challenges: [
+                "Handling high-volume real-time match and scoring data",
+                "Supporting multiple fantasy platforms with different scoring rules",
+                "Achieving low-latency AI predictions during live matches",
+                "Explaining AI predictions in a user-friendly way",
+                "Maintaining accuracy while optimizing squads under constraints"
+            ],
+
+            solutions: [
+                "Built ETL pipelines for ingesting historical and live match data",
+                "Designed a config-driven scoring engine using YAML/JSON",
+                "Used Python microservices for ML prediction and SHAP explainability",
+                "Implemented genetic algorithms for squad optimization",
+                "Optimized APIs to achieve sub-2s prediction latency"
+            ],
+
+            systemFlow: {
+                "Authentication & Match Selection": [
+                    "User authentication via Email/Password, Google, or Facebook",
+                    "JWT-based session handling",
+                    "Fetch upcoming and live matches from external providers"
+                ],
+                "Squad Building & Scoring": [
+                    "Drag-and-drop squad builder with role validation",
+                    "Platform-specific scoring matrix applied dynamically",
+                    "Real-time projected points calculation"
+                ],
+                "AI Prediction & Optimization": [
+                    "Win probability prediction using ML models",
+                    "Explainability layer showing player impact",
+                    "Squad optimizer suggesting better XI combinations",
+                    "What-if simulation for lineup comparison"
+                ],
+                "Engagement & Monetization": [
+                    "Push notifications for live match events",
+                    "ROI dashboard tracking performance",
+                    "Subscription-based access to premium AI features"
+                ]
+            },
+
+            aiAndDataPipeline: {
+                dataSources: ["Roanuz (Live Data)", "Sportmonks (Historical Data)"],
+                etl: "Scheduled and event-driven ETL pipelines",
+                mlModels: [
+                    "XGBoost for win probability prediction",
+                    "MLP for feature enhancement",
+                    "SHAP for explainability"
+                ],
+                optimization: "Genetic Algorithm with role, budget, and team constraints"
+            },
+
+            adminCapabilities: [
+                "Dataset upload and management",
+                "Model retraining triggers",
+                "User subscription monitoring",
+                "Platform configuration management",
+                "System performance analytics"
+            ],
+
+            subscriptionsAndPayments: {
+                model: "Freemium with premium AI features",
+                paymentGateways: ["Razorpay", "Stripe"],
+                accessControl: "Feature-level gating based on subscription plan"
+            },
+
+            techStack: {
+                backend: ["Node.js", "Express.js"],
+                frontendWeb: ["Next.js"],
+                database: ["MongoDB"],
+                auth: ["Firebase", "JWT", "OAuth"],
+                realtime: ["Socket.IO"],
+                mlServices: ["Python", "XGBoost", "SHAP"],
+                infrastructure: ["Docker (planned)", "GitHub Actions (CI/CD)"]
+            },
+
+            impact: [
+                "Achieved sub-2 second AI prediction latency",
+                "Maintained 99.5% platform uptime during live matches",
+                "Improved fantasy team win probability through AI insights",
+                "Reduced manual team selection effort for users"
+            ],
+
+            // Consolidated stack (for existing UI compatibility)
+            stack: [
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Next.js",
+                "Microservices",
+                "AI/ML"
+            ],
+
+            categories: ["Backend", "AI/ML", "Microservices", "Fantasy Sports"],
+
+            images: [],
+
+            date: "2023-11-01",
+            impactScore: 95,
             featured: true
         },
         {
             id: "3",
-            title: "Clutchly AI",
-            slug: "clutchly-ai",
-            description: "Scalable microservices for fantasy sports scoring.",
-            fullDescription: "Designed scalable microservices with ETL pipelines and ML models. Built a config-driven scoring engine supporting multiple fantasy platforms (Dream11, MPL).",
-            challenges: "Handling high-volume real-time scoring data for multiple platforms.",
-            solutions: "Implemented ETL pipelines and ML models achieving <2s latency.",
-            impact: ["Achieved <2s latency and 99.5% uptime."],
-            stack: ["Node.js", "Express.js", "MongoDB", "JWT", "Microservices"],
-            categories: ["Backend", "AI/ML", "Microservices"],
-            images: ["/projects/clutchly-1.jpg"],
-            date: "2023-11-01", // Approx
-            impactScore: 95,
+            title: "Skill Connect (Job Portal)",
+            slug: "skill-connect-job-portal",
+            description: "Secure dual-registration job placement portal.",
+            fullDescription: "Engineered a secure dual registration & authentication system for companies and job candidates, ensuring 100% data isolation & compliance.",
+            challenges: ["Ensuring 100% data isolation between candidates and companies."],
+            solutions: ["Automated job posting renewals and interview scheduling."],
+            impact: ["Reduced manual workload by 50%."],
+            stack: ["Node.js", "React.js", "AngularJS", "MongoDB", "PayPal"],
+            categories: ["Full-Stack", "Portal", "Automation"],
+            images: [],
+            date: "2023-06-01", // Approx
+            impactScore: 88,
             featured: true
         },
         {
@@ -122,12 +327,12 @@ export const resumeData = {
             slug: "janadesh-civic-platform",
             description: "Civic engagement platform with complaint tracking.",
             fullDescription: "Enhanced a civic engagement platform with complaint tracking, KYC, and social features. Directed the development of government dashboards.",
-            challenges: "Complex workflow management for complaint resolution.",
-            solutions: "Developed government dashboards for post moderation and analytics.",
+            challenges: ["Complex workflow management for complaint resolution."],
+            solutions: ["Developed government dashboards for post moderation and analytics."],
             impact: ["Streamlined complaint resolution workflows."],
             stack: ["Node.js", "Express.js", "MongoDB"],
             categories: ["Backend", "Civic Tech", "Dashboard"],
-            images: ["/projects/janadesh-1.jpg"],
+            images: [],
             date: "2023-03-01",
             impactScore: 85,
             featured: false
@@ -138,12 +343,12 @@ export const resumeData = {
             slug: "ecommerce-platform-api",
             description: "REST API backend for product catalog and payments.",
             fullDescription: "Expanded a REST API backend for product catalog, inventory, orders, and payments. Implemented Stripe payments ensuring secure transactions.",
-            challenges: "Scalable inventory and secure payment processing.",
-            solutions: "Implemented Stripe payments and robust REST API architecture.",
+            challenges: ["Scalable inventory and secure payment processing."],
+            solutions: ["Implemented Stripe payments and robust REST API architecture."],
             impact: ["Ensured secure and reliable transactions."],
             stack: ["Node.js", "Express.js", "MongoDB", "Stripe"],
             categories: ["Backend", "E-commerce", "API"],
-            images: ["/projects/ecommerce-api-1.jpg"],
+            images: [],
             date: "2022-09-01",
             impactScore: 80,
             featured: false
@@ -154,12 +359,12 @@ export const resumeData = {
             slug: "lithiarx-pharma",
             description: "Full-stack service with 2FA security.",
             fullDescription: "Developed full-stack services with robust backend (Express.js) and dynamic AngularJS frontend. Strengthened platform security by implementing Two-Factor Authentication (2FA).",
-            challenges: "High security requirements for pharma/medical data.",
-            solutions: "Implemented Two-Factor Authentication (2FA) and dynamic frontend.",
+            challenges: ["High security requirements for pharma/medical data."],
+            solutions: ["Implemented Two-Factor Authentication (2FA) and dynamic frontend."],
             impact: ["Strengthened platform security."],
             stack: ["Node.js", "Express.js", "AngularJS", "MongoDB", "2FA"],
             categories: ["Full-Stack", "Healthcare", "Security"],
-            images: ["/projects/lithiarx-1.jpg"],
+            images: [],
             date: "2022-04-01",
             impactScore: 82,
             featured: false
