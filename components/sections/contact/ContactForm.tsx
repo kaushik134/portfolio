@@ -4,6 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, User, Mail, MessageSquare, GripHorizontal, Check, AlertCircle } from "lucide-react";
 
+import { sendEmail } from "@/app/actions/send-email";
+import toast from "react-hot-toast";
+
 export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -49,19 +52,23 @@ export function ContactForm() {
 
         setIsSubmitting(true);
 
-        // Simulate network delay for UX
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        const formDataToSend = new FormData();
+        formDataToSend.append("name", formData.name);
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("subject", formData.subject);
+        formDataToSend.append("message", formData.message);
 
-        // Construct mailto link
-        const mailtoLink = `mailto:kaushik.vaghasiya@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        )}`;
-
-        // Open mail client
-        window.location.href = mailtoLink;
+        const { data, error } = await sendEmail(formDataToSend);
 
         setIsSubmitting(false);
+
+        if (error) {
+            toast.error(error);
+            return;
+        }
+
         setSuccess(true);
+        // toast.success("Email sent successfully!");
         // Reset form
         setFormData({ name: "", email: "", subject: "", message: "" });
     };

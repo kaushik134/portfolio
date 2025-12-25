@@ -8,6 +8,8 @@ import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/json-ld";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 
+import { Toaster } from "react-hot-toast";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
 
@@ -93,6 +95,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <ScrollToTop />
+          <Toaster position="top-right" />
         </ThemeProvider>
       </body>
     </html>
