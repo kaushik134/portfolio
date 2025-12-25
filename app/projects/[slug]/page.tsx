@@ -6,6 +6,7 @@ import { ArrowLeft, Github, ExternalLink, Calendar, CheckCircle2, Layers, Server
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ProjectFeatures } from "@/components/project-features";
+import { ProjectJsonLd } from "@/components/project-json-ld";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -24,6 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: project.title,
         description: project.description,
+        alternates: {
+            canonical: `/projects/${project.slug}`,
+        },
         openGraph: {
             title: `${project.title} | Kaushik Vaghasiya`,
             description: project.fullDescription,
@@ -59,6 +63,9 @@ export default async function ProjectPage({ params }: Props) {
 
     return (
         <div className="min-h-screen bg-background pb-20 relative selection:bg-primary/10 selection:text-primary">
+            {/* Structured Data */}
+            <ProjectJsonLd project={project} />
+
             {/* fixed background pattern - Custom image for Grabit, CSS grid for others */}
             {project.slug === 'grabit-ecommerce' ? (
                 <div className="fixed inset-0 bg-[url('/grid-pattern.png')] bg-repeat opacity-[0.03] pointer-events-none" />

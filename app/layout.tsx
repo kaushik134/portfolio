@@ -18,9 +18,16 @@ export const metadata: Metadata = {
     template: "%s | Kaushik Vaghasiya",
   },
   description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture. 4+ years of experience.",
-  keywords: ["Kaushik Vaghasiya", "Backend Developer", "Node.js", "Express.js", "Microservices", "System Architecture", "Web Developer", "Software Engineer"],
+  keywords: ["Kaushik Vaghasiya", "Backend Developer", "Node.js", "Express.js", "Microservices", "System Architecture", "Web Developer", "Software Engineer", "Go", "Golang", "AWS", "Docker", "Kubernetes"],
   authors: [{ name: "Kaushik Vaghasiya", url: "https://kaushik-vaghasiya.vercel.app" }],
   creator: "Kaushik Vaghasiya",
+  publisher: "Kaushik Vaghasiya",
+  applicationName: "Kaushik Vaghasiya Portfolio",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -30,10 +37,10 @@ export const metadata: Metadata = {
     siteName: "Kaushik Vaghasiya Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // Assuming we will have one eventually, generic fallback
+        url: "/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Kaushik Vaghasiya Portfolio",
+        alt: "Kaushik Vaghasiya - Senior Backend Developer",
       },
     ],
   },
@@ -41,7 +48,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaushik Vaghasiya | Senior Backend Developer",
     description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture.",
-    creator: "@kaushik", // Placeholder, updating if social link exists
+    creator: "@kaushik", // Update if you have a real handle
+    images: ["/profile.jpg"],
   },
   icons: {
     icon: "/icon.svg",
@@ -58,6 +66,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "google1b53c4e49e8eb1c3",
   },
 };
 
