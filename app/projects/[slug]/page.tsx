@@ -50,6 +50,8 @@ export async function generateStaticParams() {
     }));
 }
 
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+
 export default async function ProjectPage({ params }: Props) {
     const { slug } = await params;
 
@@ -65,6 +67,11 @@ export default async function ProjectPage({ params }: Props) {
         <div className="min-h-screen bg-background pb-20 relative selection:bg-primary/10 selection:text-primary">
             {/* Structured Data */}
             <ProjectJsonLd project={project} />
+            <BreadcrumbJsonLd items={[
+                { name: "Home", item: "/" },
+                { name: "Projects", item: "/projects" },
+                { name: project.title, item: `/projects/${project.slug}` }
+            ]} />
 
             {/* fixed background pattern - Custom image for Grabit, CSS grid for others */}
             {project.slug === 'grabit-ecommerce' ? (

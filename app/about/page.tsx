@@ -11,9 +11,15 @@ export const metadata: Metadata = {
     },
 };
 
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+
 export default function AboutPage() {
     return (
         <div className="flex flex-col min-h-screen pt-8">
+            <BreadcrumbJsonLd items={[
+                { name: "Home", item: "/" },
+                { name: "About", item: "/about" }
+            ]} />
             <Summary />
             <Timeline />
             <Philosophy />

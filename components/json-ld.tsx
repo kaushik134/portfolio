@@ -12,12 +12,34 @@ export function JsonLd() {
         familyName: "Vaghasiya",
         url: "https://kaushik-vaghasiya.vercel.app",
         jobTitle: resumeData.hero.role,
+        hasOccupation: {
+            "@type": "Occupation",
+            name: "Senior Backend Developer",
+            occupationLocation: {
+                "@type": "City",
+                name: "Surat"
+            },
+            skills: [
+                "Node.js",
+                "System Architecture",
+                "Microservices"
+            ]
+        },
+        nationality: {
+            "@type": "Country",
+            name: "India"
+        },
+        gender: "Male",
         image: "https://kaushik-vaghasiya.vercel.app/profile.jpg",
         sameAs: [
             "https://github.com/kaushik134",
             "https://www.linkedin.com/in/kaushik-vaghasiya-6b0788215",
             `mailto:${resumeData.hero.social.email}`
         ],
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://kaushik-vaghasiya.vercel.app"
+        },
         description: resumeData.hero.summary,
         email: resumeData.hero.social.email,
         telephone: resumeData.hero.social.phone,
@@ -47,6 +69,25 @@ export function JsonLd() {
             "@type": "ContactPoint",
             email: resumeData.hero.social.email,
             contactType: "Enquiries"
+        },
+        makesOffer: {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Backend Development, Cloud Architecture & Technical Consultancy",
+                "areaServed": [
+                    { "@type": "City", "name": "Surat" },
+                    { "@type": "City", "name": "Ahmedabad" },
+                    { "@type": "City", "name": "Gandhinagar" },
+                    { "@type": "City", "name": "Mumbai" },
+                    { "@type": "City", "name": "Pune" },
+                    { "@type": "City", "name": "Bangalore" },
+                    { "@type": "City", "name": "Delhi" },
+                    { "@type": "City", "name": "Noida" },
+                    { "@type": "Country", "name": "India" },
+                    { "@type": "Place", "name": "Worldwide" }
+                ]
+            }
         }
     };
 
@@ -59,6 +100,10 @@ export function JsonLd() {
         author: {
             "@id": personId
         },
+        publisher: {
+            "@id": personId
+        },
+        isFamilyFriendly: true,
         potentialAction: {
             "@type": "SearchAction",
             target: "https://kaushik-vaghasiya.vercel.app/?q={search_term_string}",

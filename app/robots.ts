@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
         },
         sitemap: "https://kaushik-vaghasiya.vercel.app/sitemap.xml",
+        host: "https://kaushik-vaghasiya.vercel.app",
     };
 }
