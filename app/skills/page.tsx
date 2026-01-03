@@ -2,8 +2,11 @@ import { SkillsGrid } from "@/components/sections/skills/SkillsGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Skills & Expertise",
-    description: "Technical skills and technologies Kaushik Vaghasiya specializes in.",
+    title: "Skills, Expertise & Tech Stack",
+    description: "Explore Kaushik Vaghasiya's technical expertise in Node.js, Go, Microservices, AWS, Docker, Kubernetes, and Database Optimization. See the full tech stack.",
+    alternates: {
+        canonical: "https://kaushik-vaghasiya.vercel.app/skills",
+    },
 };
 
 export default function SkillsPage() {

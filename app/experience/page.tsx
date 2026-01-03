@@ -2,8 +2,11 @@ import { ExperienceTimeline } from "@/components/sections/experience/ExperienceT
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Professional Experience",
-    description: "Detailed professional timeline and career achievements of Kaushik Vaghasiya.",
+    title: "Professional Experience | Work History",
+    description: "Kaushik Vaghasiya's professional timeline as a Senior Backend Developer. Read about my roles at Corenet Tech, Travel Platforms, and more, delivering high-impact solutions.",
+    alternates: {
+        canonical: "https://kaushik-vaghasiya.vercel.app/experience",
+    },
 };
 
 export default function ExperiencePage() {

@@ -16,11 +16,30 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://kaushik-vaghasiya.vercel.app"),
   title: {
-    default: "Kaushik Vaghasiya | Senior Backend Developer",
-    template: "%s | Kaushik Vaghasiya",
+    default: "Kaushik Vaghasiya | Senior Backend Developer & Team Lead",
+    template: "%s | Kaushik Vaghasiya | Node.js & Cloud Architect",
   },
-  description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture. 4+ years of experience.",
-  keywords: ["Kaushik Vaghasiya", "Backend Developer", "Node.js", "Express.js", "Microservices", "System Architecture", "Web Developer", "Software Engineer", "Go", "Golang", "AWS", "Docker", "Kubernetes"],
+  description: "Senior Node.js Developer and Team Lead with 4+ years of experience in architecting scalable backend systems, microservices, and cloud solutions using AWS, Docker, and Kubernetes. Based in Surat, Gujarat.",
+  keywords: [
+    "Kaushik Vaghasiya",
+    "Kaushik Vaghasiya Portfolio",
+    "Senior Backend Developer",
+    "Node.js Developer",
+    "Express.js Expert",
+    "Microservices Architect",
+    "Go Developer",
+    "Golang",
+    "Software Engineer Surat",
+    "React.js Developer",
+    "Full Stack Developer",
+    "Technical Team Lead",
+    "AWS Cloud Architect",
+    "Docker",
+    "Kubernetes",
+    "Backend Optimization",
+    "System Design",
+    "Database Management"
+  ],
   authors: [{ name: "Kaushik Vaghasiya", url: "https://kaushik-vaghasiya.vercel.app" }],
   creator: "Kaushik Vaghasiya",
   publisher: "Kaushik Vaghasiya",
@@ -28,14 +47,21 @@ export const metadata: Metadata = {
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
   alternates: {
-    canonical: "/",
+    canonical: "https://kaushik-vaghasiya.vercel.app",
+    languages: {
+      'en-US': 'https://kaushik-vaghasiya.vercel.app',
+    },
   },
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: "Kaushik",
+    lastName: "Vaghasiya",
+    username: "kaushik134",
+    gender: "male",
     locale: "en_US",
     url: "https://kaushik-vaghasiya.vercel.app",
-    title: "Kaushik Vaghasiya | Senior Backend Developer",
-    description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture.",
+    title: "Kaushik Vaghasiya | Senior Backend Developer & Architect",
+    description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture. Explore my portfolio and technical expertise.",
     siteName: "Kaushik Vaghasiya Portfolio",
     images: [
       {
@@ -50,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaushik Vaghasiya | Senior Backend Developer",
     description: "Senior Node.js Developer & Team Lead specializing in scalable backend systems, microservices, and cloud architecture.",
-    creator: "@kaushik", // Update if you have a real handle
+    creator: "@kaushik134", // Assuming github handle roughly maps, but safer to leave generic if unknown. User mentioned 'kaushik134' for github.
     images: ["/profile.jpg"],
   },
   icons: {
@@ -70,8 +96,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "fydKu7l2t51NVU3GY0-LPLeW-rtRcFZ9HQ2jdUAzKlU",
+    google: "fydKu7l2t51NVU3GY0-LPLeW-rtRcFZ9HQ2jdUAzKlU", // Keeping existing
+    // Add bing/yandex if needed
   },
+  category: "technology",
 };
 
 export default function RootLayout({

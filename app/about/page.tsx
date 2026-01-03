@@ -4,8 +4,11 @@ import { Philosophy } from "@/components/sections/about/Philosophy"; // I'll cre
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Me",
-    description: "Learn more about Kaushik Vaghasiya, his career journey, and technical philosophy.",
+    title: "About Me | Kaushik Vaghasiya",
+    description: "Learn about Kaushik Vaghasiya, a Senior Backend Developer from Surat. Discover my journey in software engineering, my philosophy on scalable architecture, and my leadership experience.",
+    alternates: {
+        canonical: "https://kaushik-vaghasiya.vercel.app/about",
+    },
 };
 
 export default function AboutPage() {

@@ -8,6 +8,8 @@ export function JsonLd() {
         "@type": "Person",
         "@id": personId,
         name: resumeData.hero.name,
+        givenName: "Kaushik",
+        familyName: "Vaghasiya",
         url: "https://kaushik-vaghasiya.vercel.app",
         jobTitle: resumeData.hero.role,
         image: "https://kaushik-vaghasiya.vercel.app/profile.jpg",
@@ -28,11 +30,18 @@ export function JsonLd() {
         knowsAbout: [
             ...resumeData.skills.backend,
             ...resumeData.skills.database,
-            ...resumeData.skills.tools
+            ...resumeData.skills.tools,
+            "System Architecture",
+            "Cloud Computing"
         ],
         worksFor: {
             "@type": "Organization",
-            name: "Current Company" // In future fetch from resumeData.experience[0].company
+            name: "Travel Booking Platform", // From resumeData experience[0]
+        },
+        alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "Shree Uttar Gujarat BBA & BCA College",
+            sameAs: "https://www.sugbbabca.org" // Best guess or placeholder
         },
         contactPoint: {
             "@type": "ContactPoint",
@@ -45,9 +54,15 @@ export function JsonLd() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "Kaushik Vaghasiya Portfolio",
+        alternateName: "Kaushik Vaghasiya - Senior Backend Developer",
         url: "https://kaushik-vaghasiya.vercel.app",
         author: {
             "@id": personId
+        },
+        potentialAction: {
+            "@type": "SearchAction",
+            target: "https://kaushik-vaghasiya.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
     };
 
@@ -58,6 +73,23 @@ export function JsonLd() {
         dateModified: new Date().toISOString(),
         mainEntity: {
             "@id": personId
+        },
+        breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://kaushik-vaghasiya.vercel.app"
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Projects",
+                    item: "https://kaushik-vaghasiya.vercel.app/projects"
+                }
+            ]
         }
     };
 
