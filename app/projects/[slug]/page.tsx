@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Calendar, CheckCircle2, Layers, Server, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ProjectFeatures } from "@/components/project-features";
 import { ProjectJsonLd } from "@/components/project-json-ld";
@@ -104,9 +105,29 @@ export default async function ProjectPage({ params }: Props) {
                             </span>
                         </div>
 
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 leading-tight">
-                            {project.title}
-                        </h1>
+                        <div className="flex items-center gap-4 mb-4 md:mb-6">
+                            {project.logo && (
+                                <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-xl overflow-hidden bg-secondary/20 p-2 border border-border/50">
+                                    <Image
+                                        src={project.logo}
+                                        alt={`${project.title} logo`}
+                                        fill
+                                        className={cn("object-contain p-1", project.logoDark && "dark:hidden")}
+                                    />
+                                    {project.logoDark && (
+                                        <Image
+                                            src={project.logoDark}
+                                            alt={`${project.title} logo dark`}
+                                            fill
+                                            className="hidden dark:block object-contain p-1"
+                                        />
+                                    )}
+                                </div>
+                            )}
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                                {project.title}
+                            </h1>
+                        </div>
                         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                             {project.description}
                         </p>

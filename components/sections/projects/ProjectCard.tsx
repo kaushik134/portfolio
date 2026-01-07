@@ -2,7 +2,9 @@ import { Project } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
     project: Project;
@@ -23,12 +25,43 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10 opacity-60" />
 
-                {/* Placeholder or actual image */}
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground bg-secondary/10 group-hover:scale-105 transition-transform duration-500">
-                    <span className="text-sm uppercase tracking-widest font-semibold text-muted-foreground/50 border border-muted-foreground/20 px-4 py-2 rounded-lg backdrop-blur-sm">
-                        {project.title} Preview
-                    </span>
-                </div>
+                {/* Project image or placeholder */}
+                {project.images && project.images.length > 0 ? (
+                    <Image
+                        src={project.images[0]}
+                        alt={`${project.title} Preview`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground bg-secondary/10 group-hover:scale-105 transition-transform duration-500">
+                        <span className="text-sm uppercase tracking-widest font-semibold text-muted-foreground/50 border border-muted-foreground/20 px-4 py-2 rounded-lg backdrop-blur-sm">
+                            {project.title} Preview
+                        </span>
+                    </div>
+                )}
+
+                {/* Logo Overlay */}
+                {project.logo && (
+                    <div className="absolute top-4 left-4 z-20 w-10 h-10 rounded-lg bg-background/80 backdrop-blur-md p-1.5 border border-border/50 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Image
+                            src={project.logo}
+                            alt={`${project.title} logo`}
+                            width={32}
+                            height={32}
+                            className={cn("object-contain w-full h-full", project.logoDark && "dark:hidden")}
+                        />
+                        {project.logoDark && (
+                            <Image
+                                src={project.logoDark}
+                                alt={`${project.title} logo dark`}
+                                width={32}
+                                height={32}
+                                className="hidden dark:block object-contain w-full h-full"
+                            />
+                        )}
+                    </div>
+                )}
             </div>
 
             {/* Content Section */}

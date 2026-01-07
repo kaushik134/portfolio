@@ -42,6 +42,8 @@ export type Project = {
     stack: string[];
     categories: string[];
     images: string[];
+    logo?: string;
+    logoDark?: string;
     date: string; // YYYY-MM-DD
     impactScore: number; // 1-100
     githubUrl?: string;

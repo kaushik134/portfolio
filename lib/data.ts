@@ -168,10 +168,12 @@ QR-based offer redemption, UPI payments, automated payouts, and a gamified coin 
             images: [
                 "/projects/grabit-4.png",
                 "/projects/grabit-5.png",
-                "/projects/grabit-1.png",
-                "/projects/grabit-2.png",
-                "/projects/grabit-3.png",
+                "/projects/grabit-biz-1.svg",
+                "/projects/grabit-biz-2.svg",
+                "/projects/grabit-biz-3.svg",
             ],
+            logo: "/projects/grabit-logo-light.svg",
+            logoDark: "/projects/grabit-logo-dark.svg",
             date: "2024-01-01",
             impactScore: 92,
             featured: true,
@@ -301,7 +303,14 @@ AI-driven win prediction, squad optimization, and explainable insights.
 
             categories: ["Backend", "AI/ML", "Microservices", "Fantasy Sports"],
 
-            images: [],
+            images: [
+                "/projects/clutchly-1.png",
+                "/projects/clutchly-2.png",
+                "/projects/clutchly-3.png",
+                "/projects/clutchly-4.png",
+                "/projects/clutchly-5.png",
+            ],
+            logo: "/projects/clutchly-logo.svg",
 
             date: "2023-11-01",
             impactScore: 95,
@@ -571,8 +580,12 @@ dedicated dashboards, while Admin ensures platform governance and compliance.
             categories: ["Backend", "Civic Tech", "Social Platform", "Dashboard"],
 
             images: [
-
+                "/projects/janadesh-1.png",
+                "/projects/janadesh-2.png",
+                "/projects/janadesh-3.png",
+                "/projects/janadesh-4.png",
             ],
+            logo: "/projects/janadesh-logo.svg",
 
             date: "2023-03-01",
             impactScore: 85,
@@ -1012,7 +1025,8 @@ secure payments, admin moderation, and scalable search using MongoDB aggregation
 
             categories: ["Backend", "Travel Tech", "Marketplace", "SaaS"],
 
-            images: [],
+            images: ["/projects/folo-1.png"],
+            logo: "/projects/loopmate-logo.webp",
 
             date: "2024-05-01",
             impactScore: 90,
@@ -1298,7 +1312,8 @@ and template-based email notifications using Zoho Mail.
 
             categories: ["Backend", "Vendor Management", "Payments", "Automation"],
 
-            images: [],
+            images: ["/projects/khana-1.png"],
+            logo: "/projects/khana-logo.svg",
 
             date: "2024-03-10",
             impactScore: 86,
